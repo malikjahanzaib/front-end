@@ -1,6 +1,8 @@
 function login() {
-    var username = $('#username-modal').val();
-    var password = $('#password-modal').val();
+    // var username = $('#username-modal').val();
+    // var password = $('#password-modal').val();
+    var username = $('#username').val();
+    var password = $('#password').val();
     $.ajax({
         url: "login",
         type: "GET",
@@ -10,7 +12,8 @@ function login() {
             console.log('posted: ' + textStatus);
             console.log("logged_in cookie: " + $.cookie('logged_in'));
             setTimeout(function(){
-                location.reload();
+                // location.reload();
+                window.location.href = 'index.html';
             }, 1500);
         },
         error: function (jqXHR, textStatus, errorThrown) {
